@@ -20,6 +20,7 @@ public class UserService {
         return userRepository.findByName(name);
     }
 
+
     public void save(User user){
         userRepository.save(user);
     }

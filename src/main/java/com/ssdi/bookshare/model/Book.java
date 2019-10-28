@@ -27,6 +27,21 @@ public class Book implements Serializable {
     public Book() {
     }
 
+//    public Book(int id, String title, String author, Double price, Boolean isListed) {
+//        this.id = id;
+//        this.title = title;
+//        this.author = author;
+//        this.price = price;
+//        this.isListed = isListed;
+//    }
+
+        public Book(String title, String author, Double price, Boolean isListed) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.isListed = isListed;
+    }
+
     public int getId() {
         return id;
     }

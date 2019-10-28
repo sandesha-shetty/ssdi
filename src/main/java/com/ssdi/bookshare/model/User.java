@@ -1,6 +1,7 @@
 package com.ssdi.bookshare.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,7 +25,7 @@ public class User  {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "user", cascade ={CascadeType.ALL})
-    private List<Book> books;
+    private List<Book> books = new ArrayList<>();
 
     public User() {
     }
@@ -82,5 +83,13 @@ public class User  {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public void add(Book book){
+//        if(book == null){
+//            books = new ArrayList<>();
+//        }
+        books.add(book);
+        book.setUser(this);
     }
 }
